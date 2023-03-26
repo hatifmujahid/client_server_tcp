@@ -45,6 +45,7 @@ def connect():
 def quit_app():
     client_sockets.close()
     root.destroy()
+    client_sockets.close()
     exit(0)
 # Create main window
 root = tk.Tk()

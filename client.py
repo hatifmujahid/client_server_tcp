@@ -49,6 +49,7 @@ def connect():
 def quit_app():
     s.close()
     root.destroy()
+    s.close()
     exit(0)
 root = tk.Tk()
 root.title("Client Window")
