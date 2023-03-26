@@ -43,7 +43,6 @@ def connect():
     t2 = thread.Thread(target=recv_message)
     t2.start()
 def quit_app():
-    client_sockets.close()
     root.destroy()
     client_sockets.close()
     exit(0)

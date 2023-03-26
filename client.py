@@ -43,11 +43,11 @@ def connect():
     print("New client created:")
     chat_log.insert(tk.END, "Client connected to 127.0.0.1:"+ str(port) + "\n")
     send_button["state"] = "normal"
-    t2 = thread.Thread(target=recv_message)
+    global t2
+    t2= thread.Thread(target=recv_message)
     t2.start()
 
 def quit_app():
-    s.close()
     root.destroy()
     s.close()
     exit(0)
