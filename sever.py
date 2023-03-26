@@ -42,6 +42,7 @@ def connect():
     t2.start()
 def quit_app():
     root.destroy()
+    client_sockets.close()
     exit(0)
 # Create main window
 root = tk.Tk()
