@@ -42,10 +42,12 @@ def connect():
     s.connect((localhost,port))
     print("New client created:")
     chat_log.insert(tk.END, "Client connected to 127.0.0.1:"+ str(port) + "\n")
+    send_button["state"] = "normal"
     t2 = thread.Thread(target=recv_message)
     t2.start()
 
 def quit_app():
+    s.close()
     root.destroy()
     exit(0)
 root = tk.Tk()
@@ -75,6 +77,7 @@ message_entry.pack()
 # Create send button
 send_button = tk.Button(root, text="Send Message", command=send_message)
 send_button.pack()
+send_button["state"] = "disabled"
 
 quit_button = tk.Button(root, text="Quit", command=quit_app)
 quit_button.pack(padx=10, pady=5)
